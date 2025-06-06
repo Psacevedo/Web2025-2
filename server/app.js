@@ -4,6 +4,7 @@ const bodyParser = require('koa-bodyparser');
 const dotenv = require('dotenv');
 const sequelize = require('./models/sequelize');
 const gameRoutes = require('./routes/games');
+const playerRoutes = require('./routes/players');
 
 dotenv.config();
 
@@ -12,7 +13,8 @@ const router = new Router();
 
 app.use(bodyParser());
 
-router.use('/games', gameRoutes.routes());
+router.use(gameRoutes.routes());
+router.use(playerRoutes.routes());
 
 app.use(router.routes());
 app.use(router.allowedMethods());
