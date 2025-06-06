@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 const sequelize = require('./models/sequelize');
 const gameRoutes = require('./routes/games');
 const playerRoutes = require('./routes/players');
+const authRoutes = require('./routes/auth').router;
+const requireAuth = require('./routes/authMiddleware');
 
 dotenv.config();
 
@@ -13,6 +15,8 @@ const router = new Router();
 
 app.use(bodyParser());
 
+router.use(authRoutes.routes());
+router.use(requireAuth());
 router.use(gameRoutes.routes());
 router.use(playerRoutes.routes());
 

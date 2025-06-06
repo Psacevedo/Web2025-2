@@ -38,6 +38,11 @@ node app.js
 - `PUT /players/:id` – update player
 - `DELETE /players/:id` – delete player
 
+Authentication endpoints:
+
+- `POST /auth/signup` – create a user `{ "email":"test@example.com", "password":"1234" }`
+- `POST /auth/login` – obtain JWT token `{ "email":"test@example.com", "password":"1234" }`
+
 The board size is 30 squares with a few ladders and slides defined in `routes/games.js`.
 
 ## Docker

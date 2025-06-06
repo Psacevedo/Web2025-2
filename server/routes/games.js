@@ -58,9 +58,10 @@ router.put('/:gameId', async (ctx) => {
   }
 });
 
-// Delete a game
+// Delete a game (admin only)
 router.delete('/:gameId', async (ctx) => {
   if (!validateId(ctx.params.gameId)) { ctx.status = 400; return; }
+  if (ctx.state.user.role !== 'admin') { ctx.status = 403; return; }
   try {
     const game = await Game.findByPk(ctx.params.gameId);
     if (!game) { ctx.status = 404; return; }

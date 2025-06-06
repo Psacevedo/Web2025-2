@@ -1,5 +1,15 @@
 [
   {
+    "step": "signup",
+    "request": { "method": "POST", "url": "/auth/signup", "body": {"email": "ana@example.com", "password": "pass"} },
+    "response": { "id": 1, "email": "ana@example.com", "role": "user" }
+  },
+  {
+    "step": "login",
+    "request": { "method": "POST", "url": "/auth/login", "body": {"email": "ana@example.com", "password": "pass"} },
+    "response": { "token": "<jwt>" }
+  },
+  {
     "step": "createGame",
     "request": { "method": "POST", "url": "/games" },
     "response": { "id": 1, "status": "waiting" }

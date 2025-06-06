@@ -1,6 +1,6 @@
-# Snakes and Ladders Backend
+# Snakes and Ladders
 
-This repository contains an example Koa API for a simplified "Escaleras y Toboganes" game. It exposes CRUD endpoints for games and players and implements basic gameplay logic.
+This repository contains a small example implementation of an "Escaleras y Toboganes" (Snakes and Ladders) game. It includes a Koa API with Sequelize and a simple React frontend.
 
 ## Quick start
 
@@ -18,6 +18,16 @@ node app.js
 ```
 
 The API listens on port `3000` by default. A description of every route is available in [`server/README.md`](server/README.md).
+
+To run the React interface:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+The frontend is served on port `5173` and expects the API to run on `http://localhost:3000`.
 
 ### Docker
 
@@ -41,4 +51,4 @@ You can deploy the API to a PaaS like Render. Create a web service from the `ser
 
 ### Kanban board
 
-Project tasks are organized in a board which can be seen at `<your board url here>`.
+Project tasks are organized in a board which can be seen at [Kanban Board](https://example.com/kanban).
