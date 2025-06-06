@@ -43,6 +43,13 @@ Authentication endpoints:
 - `POST /auth/signup` – create a user `{ "email":"test@example.com", "password":"1234" }`
 - `POST /auth/login` – obtain JWT token `{ "email":"test@example.com", "password":"1234" }`
 
+User management (admin only):
+- `GET /users` – list users
+- `GET /users/:id` – fetch user
+- `POST /users` – create user `{ "email": "user@example.com", "password": "1234", "role": "user" }`
+- `PUT /users/:id` – update user
+- `DELETE /users/:id` – delete user
+
 The board size is 30 squares with a few ladders and slides defined in `routes/games.js`.
 
 ## Docker
@@ -54,3 +61,8 @@ docker-compose up --build
 ```
 
 The API will be available on port `3000`.
+
+### Deployment
+
+An instance of this API is hosted at
+[https://snakes-ladders-api.onrender.com](https://snakes-ladders-api.onrender.com).

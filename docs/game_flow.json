@@ -32,5 +32,15 @@
       "status": "waiting",
       "players": [ { "id": 1, "name": "Ana", "position": 4 } ]
     }
+  },
+  {
+    "step": "updatePlayer",
+    "request": { "method": "PUT", "url": "/players/1", "body": {"position": 10} },
+    "response": { "id": 1, "name": "Ana", "position": 10, "gameId": 1 }
+  },
+  {
+    "step": "deleteGame",
+    "request": { "method": "DELETE", "url": "/games/1" },
+    "response": { "status": 204 }
   }
 ]

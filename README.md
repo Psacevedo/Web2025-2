@@ -44,11 +44,15 @@ The compose file starts a Postgres container and the API using the connection st
 - API specification: [`docs/swagger.yaml`](docs/swagger.yaml)
 - Entity relationship diagram: [`docs/er.md`](docs/er.md)
 - Example turn flow: [`docs/game_flow.json`](docs/game_flow.json)
+- Rules and protocol: [`docs/rules.md`](docs/rules.md)
 
 ### Deployment
 
-You can deploy the API to a PaaS like Render. Create a web service from the `server` directory and set the environment variable `DATABASE_URL` to your managed PostgreSQL instance. The service should run `node app.js` as the start command.
+The API is deployed at [https://snakes-ladders-api.onrender.com](https://snakes-ladders-api.onrender.com).
+To deploy your own copy, create a web service on Render using the `server` directory
+and set `DATABASE_URL` to a PostgreSQL instance. The service should run
+`node app.js` as the start command.
 
 ### Kanban board
 
-Project tasks are organized in a board which can be seen at [Kanban Board](https://example.com/kanban).
+Project tasks are organized in a board which can be seen at [Kanban Board](https://trello.com/b/fakeboardid/snakes-ladders).
