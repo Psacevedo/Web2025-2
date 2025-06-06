@@ -13,6 +13,9 @@ Game.init({
     type: DataTypes.STRING,
     allowNull: false,
     defaultValue: 'waiting',
+    validate: {
+      isIn: [['waiting', 'in-progress', 'finished']]
+    }
   }
 }, { sequelize, modelName: 'game' });
 

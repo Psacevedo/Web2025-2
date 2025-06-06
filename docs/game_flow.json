@@ -1,0 +1,26 @@
+[
+  {
+    "step": "createGame",
+    "request": { "method": "POST", "url": "/games" },
+    "response": { "id": 1, "status": "waiting" }
+  },
+  {
+    "step": "joinGame",
+    "request": { "method": "POST", "url": "/games/1/players", "body": {"name": "Ana"} },
+    "response": { "id": 1, "name": "Ana", "gameId": 1, "position": 0 }
+  },
+  {
+    "step": "rollDice",
+    "request": { "method": "POST", "url": "/games/1/roll", "body": {"playerId": 1, "roll": 4} },
+    "response": { "position": 4 }
+  },
+  {
+    "step": "getGame",
+    "request": { "method": "GET", "url": "/games/1" },
+    "response": {
+      "id": 1,
+      "status": "waiting",
+      "players": [ { "id": 1, "name": "Ana", "position": 4 } ]
+    }
+  }
+]

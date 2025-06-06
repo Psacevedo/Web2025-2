@@ -13,10 +13,16 @@ Player.init({
   name: {
     type: DataTypes.STRING,
     allowNull: false,
+    validate: {
+      len: [1, 50]
+    }
   },
   position: {
     type: DataTypes.INTEGER,
     defaultValue: 0,
+    validate: {
+      min: 0
+    }
   }
 }, { sequelize, modelName: 'player' });
 
