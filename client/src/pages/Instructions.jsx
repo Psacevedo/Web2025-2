@@ -9,6 +9,8 @@ export default function Instructions() {
         <li>Si caes en el inicio de una escalera subes hasta su casilla final.</li>
         <li>Si caes en la cabeza de un tobogán bajas hasta su casilla final.</li>
         <li>Para ganar debes llegar exactamente a la casilla 100.</li>
+        <li>El tablero se dibuja como una cuadr&iacute;cula de 10x10 y se muestra automaticamente al iniciar la partida.</li>
+        <li>Las escaleras, toboganes y fichas de jugador se representan con sprites de colores.</li>
       </ol>
       <h3>Escaleras y Toboganes</h3>
       <table>
