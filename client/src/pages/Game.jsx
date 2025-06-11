@@ -37,7 +37,7 @@ export default function Game() {
   return (
     <section>
       <h2>Juego #{game.id}</h2>
-      <Board boardSize={30} players={players} />
+      <Board players={players} />
     </section>
   );
 }
