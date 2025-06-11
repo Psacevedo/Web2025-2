@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Board from '../components/Board.jsx';
+import { apiFetch } from '../api.js';
 
 export default function Game() {
   const [game, setGame] = useState(null);
@@ -8,11 +9,11 @@ export default function Game() {
   useEffect(() => {
     async function startGame() {
       try {
-        const resGame = await fetch('http://localhost:3000/games', { method: 'POST' });
+        const resGame = await apiFetch('/games', { method: 'POST' });
         const createdGame = await resGame.json();
         setGame(createdGame);
 
-        const resPlayer = await fetch(`http://localhost:3000/games/${createdGame.id}/players`, {
+        const resPlayer = await apiFetch(`/games/${createdGame.id}/players`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: 'Jugador' })

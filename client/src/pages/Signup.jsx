@@ -1,12 +1,37 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { apiFetch } from '../api.js';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Registro ${email}`);
+    try {
+      const res = await apiFetch('/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      if (!res.ok) {
+        alert('No se pudo registrar');
+        return;
+      }
+      const loginRes = await apiFetch('/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      if (loginRes.ok) {
+        const data = await loginRes.json();
+        localStorage.setItem('token', data.token);
+        navigate('/game');
+      }
+    } catch (err) {
+      console.error('Signup error', err);
+    }
   };
 
   return (
