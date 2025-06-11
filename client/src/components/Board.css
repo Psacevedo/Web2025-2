@@ -1,8 +1,8 @@
 
 .board {
   display: grid;
-  grid-template-columns: repeat(10, 50px);
-  grid-auto-rows: 50px;
+  grid-template-columns: repeat(10, 60px);
+  grid-auto-rows: 60px;
   gap: 2px;
   margin-top: 20px;
 }
@@ -25,19 +25,20 @@
   background-color: #ffd0d0;
 }
 
-.marker {
+.sprite {
   position: absolute;
   top: 2px;
   left: 2px;
-  font-size: 0.7em;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
 }
 
 .token {
   position: absolute;
   bottom: 2px;
   right: 2px;
-  background: yellow;
-  border-radius: 50%;
-  padding: 2px 5px;
-  font-size: 0.8em;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
 }

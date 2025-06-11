@@ -9,6 +9,8 @@ This document describes the basic rules of the Snakes and Ladders game and the J
 - If a player lands on the bottom of a ladder they climb to its top.
 - If a player lands on the head of a slide they go down to its tail.
  - A player must roll the exact number needed to reach square 100 to win.
+- The board is rendered as a 10x10 grid with alternating rows.
+- Ladders, snakes and player tokens are displayed using simple SVG sprites.
 
 Ladders and slides used in this implementation:
 
