@@ -19,7 +19,7 @@ app.use(cors({ origin: 'http://localhost:5173' })); // <--- Usar cors ANTES de l
 app.use(bodyParser());
 
 router.use(authRoutes.routes());
-router.use(requireAuth());
+// router.use(requireAuth()); // <--- TEMPORALMENTE COMENTADO PARA PRUEBAS
 router.use(gameRoutes.routes());
 router.use(playerRoutes.routes());
 router.use(userRoutes.routes());
