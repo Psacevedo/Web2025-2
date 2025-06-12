@@ -60,6 +60,14 @@ Build and run with docker-compose to start the API and a PostgreSQL database:
 docker-compose up --build
 ```
 
+The Docker image is now based on the lightweight `node:20-alpine` image and uses
+`npm ci --omit=dev` to install only production dependencies. This makes the
+resulting container much smaller. You can build it directly with:
+
+```bash
+docker build -t snakes-ladders-api .
+```
+
 The API will be available on port `3000`.
 
 ### Deployment
