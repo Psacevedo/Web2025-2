@@ -45,6 +45,7 @@ The compose file starts a Postgres container and the API using the connection st
 - Entity relationship diagram: [`docs/er.md`](docs/er.md)
 - Example turn flow: [`docs/game_flow.json`](docs/game_flow.json)
 - Rules and protocol: [`docs/rules.md`](docs/rules.md)
+- Usage guide for usuarios y administradores: [`docs/guide.md`](docs/guide.md)
 
 ### Deployment
 
@@ -52,6 +53,17 @@ The API is deployed at [https://snakes-ladders-api.onrender.com](https://snakes-
 To deploy your own copy, create a web service on Render using the `server` directory
 and set `DATABASE_URL` to a PostgreSQL instance. The service should run
 `node app.js` as the start command.
+
+The React client is published via Netlify at
+[https://snakes-ladders.netlify.app](https://snakes-ladders.netlify.app).
+To deploy it yourself, copy the provided `netlify.toml` and run:
+
+```bash
+npm install --prefix client
+netlify deploy --prod
+```
+
+Netlify uses `npm run build` in the `client` folder and serves the `dist` directory.
 
 ### Kanban board
 

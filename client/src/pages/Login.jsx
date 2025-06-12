@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext.jsx';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: call backend
-    alert(`Login ${email}`);
+    const ok = await login(email, password);
+    if (ok) {
+      navigate('/');
+    } else {
+      alert('Credenciales incorrectas');
+    }
   };
 
   return (

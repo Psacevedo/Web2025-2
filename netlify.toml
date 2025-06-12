@@ -1,0 +1,8 @@
+[build]
+  base = "client"
+  publish = "dist"
+  command = "npm run build"
+
+[context.production.environment]
+  VITE_API_URL = "https://snakes-ladders-api.onrender.com"
+
