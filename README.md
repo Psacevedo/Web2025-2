@@ -54,6 +54,17 @@ To deploy your own copy, create a web service on Render using the `server` direc
 and set `DATABASE_URL` to a PostgreSQL instance. The service should run
 `node app.js` as the start command.
 
+The React client is published via Netlify at
+[https://snakes-ladders.netlify.app](https://snakes-ladders.netlify.app).
+To deploy it yourself, copy the provided `netlify.toml` and run:
+
+```bash
+npm install --prefix client
+netlify deploy --prod
+```
+
+Netlify uses `npm run build` in the `client` folder and serves the `dist` directory.
+
 ### Kanban board
 
 Project tasks are organized in a board which can be seen at [Kanban Board](https://trello.com/b/fakeboardid/snakes-ladders).

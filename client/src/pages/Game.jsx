@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import Board from '../components/Board.jsx';
 import { AuthContext } from '../AuthContext.jsx';
+import { API_URL } from '../config.js';
 
 export default function Game() {
   const [game, setGame] = useState(null);
@@ -11,14 +12,14 @@ export default function Game() {
   useEffect(() => {
     async function startGame() {
       try {
-        const resGame = await fetch('http://localhost:3000/games', {
+        const resGame = await fetch(`${API_URL}/games`, {
           method: 'POST',
           headers: { 'Authorization': `Bearer ${user.token}` }
         });
         const createdGame = await resGame.json();
         setGame(createdGame);
 
-        const resPlayer = await fetch(`http://localhost:3000/games/${createdGame.id}/players`, {
+        const resPlayer = await fetch(`${API_URL}/games/${createdGame.id}/players`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
           body: JSON.stringify({ name: 'Jugador' })
@@ -37,7 +38,7 @@ export default function Game() {
     setRolling(true);
     const roll = Math.floor(Math.random() * 6) + 1;
     try {
-      const res = await fetch(`http://localhost:3000/games/${game.id}/roll`, {
+      const res = await fetch(`${API_URL}/games/${game.id}/roll`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
