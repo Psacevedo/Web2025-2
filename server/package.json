@@ -20,6 +20,7 @@
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "@koa/cors": "^5.0.0"
   }
 }

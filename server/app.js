@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
+const cors = require('@koa/cors'); // <--- Importar @koa/cors
 const dotenv = require('dotenv');
 const sequelize = require('./models/sequelize');
 const gameRoutes = require('./routes/games');
@@ -14,6 +15,7 @@ dotenv.config();
 const app = new Koa();
 const router = new Router();
 
+app.use(cors({ origin: 'http://localhost:5173' })); // <--- Usar cors ANTES de las rutas y bodyParser
 app.use(bodyParser());
 
 router.use(authRoutes.routes());
