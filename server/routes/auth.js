@@ -1,7 +1,7 @@
-const Router = require('koa-router');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const User = require('../models/user');
+import Router from 'koa-router';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import User from '../models/user.js';
 
 const router = new Router({ prefix: '/auth' });
 const JWT_SECRET = process.env.JWT_SECRET || 'secret';
@@ -33,4 +33,4 @@ router.post('/login', async (ctx) => {
   }
 });
 
-module.exports = { router, JWT_SECRET };
+export { router, JWT_SECRET };

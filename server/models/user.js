@@ -1,6 +1,6 @@
-const { DataTypes, Model } = require('sequelize');
-const bcrypt = require('bcryptjs');
-const sequelize = require('./sequelize');
+import { DataTypes, Model } from 'sequelize';
+import bcrypt from 'bcryptjs';
+import sequelize from './sequelize.js';
 
 class User extends Model {
   validPassword(password) {
@@ -33,4 +33,4 @@ User.init({
   }
 }, { sequelize, modelName: 'user' });
 
-module.exports = User;
+export default User;

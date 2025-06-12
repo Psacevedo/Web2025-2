@@ -21,4 +21,4 @@ function applyMove(position, roll) {
   return newPos;
 }
 
-module.exports = { applyMove, BOARD_SIZE, LADDERS, SLIDES };
+export { applyMove, BOARD_SIZE, LADDERS, SLIDES };

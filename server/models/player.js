@@ -1,6 +1,6 @@
-const { DataTypes, Model } = require('sequelize');
-const sequelize = require('./sequelize');
-const Game = require('./game');
+import { DataTypes, Model } from 'sequelize';
+import sequelize from './sequelize.js';
+import Game from './game.js';
 
 class Player extends Model {}
 
@@ -29,4 +29,4 @@ Player.init({
 Game.hasMany(Player);
 Player.belongsTo(Game);
 
-module.exports = Player;
+export default Player;

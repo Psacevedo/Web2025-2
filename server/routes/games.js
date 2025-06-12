@@ -1,7 +1,7 @@
-const Router = require('koa-router');
-const Game = require('../models/game');
-const Player = require('../models/player');
-const { applyMove } = require('../utils/gameLogic');
+import Router from 'koa-router';
+import Game from '../models/game.js';
+import Player from '../models/player.js';
+import { applyMove } from '../utils/gameLogic.js';
 
 function validateId(id) {
   const num = Number(id);
@@ -101,10 +101,9 @@ router.get('/:gameId', async (ctx) => {
   try {
     const game = await Game.findByPk(ctx.params.gameId, { include: Player });
     if (!game) { ctx.status = 404; return; }
-    ctx.body = game;
-  } catch {
+    ctx.body = game;  } catch {
     ctx.status = 500;
   }
 });
 
-module.exports = router;
+export default router;

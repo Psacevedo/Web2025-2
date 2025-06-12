@@ -1,6 +1,6 @@
-const Router = require('koa-router');
-const bcrypt = require('bcryptjs');
-const User = require('../models/user');
+import Router from 'koa-router';
+import bcrypt from 'bcryptjs';
+import User from '../models/user.js';
 
 function validateId(id) {
   const num = Number(id);
@@ -77,8 +77,7 @@ router.delete('/:id', async ctx => {
     await user.destroy();
     ctx.status = 204;
   } catch {
-    ctx.status = 500;
-  }
+    ctx.status = 500;  }
 });
 
-module.exports = router;
+export default router;

@@ -1,14 +1,14 @@
-const Koa = require('koa');
-const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
-const cors = require('@koa/cors'); // <--- Importar @koa/cors
-const dotenv = require('dotenv');
-const sequelize = require('./models/sequelize');
-const gameRoutes = require('./routes/games');
-const playerRoutes = require('./routes/players');
-const userRoutes = require('./routes/users');
-const authRoutes = require('./routes/auth').router;
-const requireAuth = require('./routes/authMiddleware');
+import Koa from 'koa';
+import Router from 'koa-router';
+import bodyParser from 'koa-bodyparser';
+import cors from '@koa/cors';
+import dotenv from 'dotenv';
+import sequelize from './models/sequelize.js';
+import gameRoutes from './routes/games.js';
+import playerRoutes from './routes/players.js';
+import userRoutes from './routes/users.js';
+import { router as authRoutes } from './routes/auth.js';
+import requireAuth from './routes/authMiddleware.js';
 
 dotenv.config();
 

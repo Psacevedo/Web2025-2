@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('./auth');
+import jwt from 'jsonwebtoken';
+import { JWT_SECRET } from './auth.js';
 
-module.exports = function(requiredRole) {
+export default function(requiredRole) {
   return async (ctx, next) => {
     const authHeader = ctx.headers['authorization'];
     if (!authHeader) { ctx.status = 401; return; }

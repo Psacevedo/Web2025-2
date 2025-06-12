@@ -1,6 +1,6 @@
-const Router = require('koa-router');
-const Player = require('../models/player');
-const Game = require('../models/game');
+import Router from 'koa-router';
+import Player from '../models/player.js';
+import Game from '../models/game.js';
 
 function validateId(id) {
   const num = Number(id);
@@ -68,10 +68,9 @@ router.delete('/:id', async ctx => {
     const player = await Player.findByPk(ctx.params.id);
     if (!player) { ctx.status = 404; return; }
     await player.destroy();
-    ctx.status = 204;
-  } catch {
+    ctx.status = 204;  } catch {
     ctx.status = 500;
   }
 });
 
-module.exports = router;
+export default router;
