@@ -12,7 +12,7 @@ export default function NavBar() {
         <li><Link to="/instructions">Instrucciones</Link></li>
         <li><Link to="/about">Nosotros</Link></li>
         <li><Link to="/faq">FAQ</Link></li>
-        <li><Link to="/game">Ir a partida</Link></li>
+        {user && <li><Link to="/game">Ir a partida</Link></li>}
         {user ? (
           <>
             <li className="user">{user.email}</li>

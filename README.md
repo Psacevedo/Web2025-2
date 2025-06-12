@@ -45,6 +45,7 @@ The compose file starts a Postgres container and the API using the connection st
 - Entity relationship diagram: [`docs/er.md`](docs/er.md)
 - Example turn flow: [`docs/game_flow.json`](docs/game_flow.json)
 - Rules and protocol: [`docs/rules.md`](docs/rules.md)
+- Usage guide for usuarios y administradores: [`docs/guide.md`](docs/guide.md)
 
 ### Deployment
 
