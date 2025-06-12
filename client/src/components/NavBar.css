@@ -8,9 +8,46 @@
   list-style: none;
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav a:hover {
+  background-color: #555;
+}
+
+.game-link {
+  background-color: #4CAF50 !important;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.game-link:hover {
+  background-color: #45a049 !important;
+}
+
+.user {
+  color: #ccc;
+  font-style: italic;
+}
+
+.nav button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav button:hover {
+  background-color: #da190b;
 }
