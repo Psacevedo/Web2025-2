@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext.jsx';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { signup } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Registro ${email}`);
+    const ok = await signup(email, password);
+    if (ok) {
+      navigate('/');
+    } else {
+      alert('No fue posible registrar');
+    }
   };
 
   return (
