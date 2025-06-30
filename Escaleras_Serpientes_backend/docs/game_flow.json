@@ -1,0 +1,46 @@
+[
+  {
+    "step": "signup",
+    "request": { "method": "POST", "url": "/auth/signup", "body": {"email": "ana@example.com", "password": "pass"} },
+    "response": { "id": 1, "email": "ana@example.com", "role": "user" }
+  },
+  {
+    "step": "login",
+    "request": { "method": "POST", "url": "/auth/login", "body": {"email": "ana@example.com", "password": "pass"} },
+    "response": { "token": "<jwt>" }
+  },
+  {
+    "step": "createGame",
+    "request": { "method": "POST", "url": "/games" },
+    "response": { "id": 1, "status": "waiting" }
+  },
+  {
+    "step": "joinGame",
+    "request": { "method": "POST", "url": "/games/1/players", "body": {"name": "Ana"} },
+    "response": { "id": 1, "name": "Ana", "gameId": 1, "position": 0 }
+  },
+  {
+    "step": "rollDice",
+    "request": { "method": "POST", "url": "/games/1/roll", "body": {"playerId": 1, "roll": 4} },
+    "response": { "position": 4 }
+  },
+  {
+    "step": "getGame",
+    "request": { "method": "GET", "url": "/games/1" },
+    "response": {
+      "id": 1,
+      "status": "waiting",
+      "players": [ { "id": 1, "name": "Ana", "position": 4 } ]
+    }
+  },
+  {
+    "step": "updatePlayer",
+    "request": { "method": "PUT", "url": "/players/1", "body": {"position": 10} },
+    "response": { "id": 1, "name": "Ana", "position": 10, "gameId": 1 }
+  },
+  {
+    "step": "deleteGame",
+    "request": { "method": "DELETE", "url": "/games/1" },
+    "response": { "status": 204 }
+  }
+]

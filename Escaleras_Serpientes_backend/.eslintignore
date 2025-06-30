@@ -1,0 +1,5 @@
+node_modules/
+coverage/
+babel.config.js
+*.config.js
+__tests__/

@@ -1,0 +1,63 @@
+{
+  "name": "escaleras-serpientes-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Snakes and Ladders (Escaleras y Serpientes) game with real-time multiplayer support",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "snakes-and-ladders",
+    "escaleras-serpientes",
+    "game",
+    "multiplayer",
+    "koa",
+    "socket.io",
+    "realtime",
+    "api",
+    "jwt",
+    "sequelize"
+  ],
+  "author": "Your Name <your.email@domain.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/escaleras-serpientes-backend.git"
+  },
+  "homepage": "https://github.com/your-username/escaleras-serpientes-backend#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/escaleras-serpientes-backend/issues"
+  },
+  "type": "module",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^13.0.1",
+    "pg": "^8.16.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "jest": "^30.0.3"
+  }
+}

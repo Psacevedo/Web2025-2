@@ -1,0 +1,53 @@
+{
+  "name": "escaleras-serpientes-frontend",
+  "version": "1.0.0",
+  "description": "Frontend React application for Snakes and Ladders (Escaleras y Serpientes) game with real-time multiplayer",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "keywords": [
+    "snakes-and-ladders",
+    "escaleras-serpientes",
+    "game",
+    "multiplayer",
+    "react",
+    "vite",
+    "socket.io",
+    "realtime",
+    "frontend",
+    "responsive"
+  ],
+  "author": "Your Name <your.email@domain.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/escaleras-serpientes-frontend.git"
+  },
+  "homepage": "https://github.com/your-username/escaleras-serpientes-frontend#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/escaleras-serpientes-frontend/issues"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "vite": "^4.5.0"
+  }
+}

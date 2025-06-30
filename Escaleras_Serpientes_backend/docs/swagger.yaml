@@ -1,0 +1,268 @@
+openapi: 3.0.0
+info:
+  title: Snakes and Ladders API
+  version: 1.0.0
+paths:
+  /games:
+    post:
+      summary: Create game
+      responses:
+        '201':
+          description: created
+    get:
+      summary: List games
+      responses:
+        '200':
+          description: ok
+  /games/{id}:
+    get:
+      summary: Get game
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: game info
+    put:
+      summary: Update game
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+      responses:
+        '200':
+          description: updated
+    delete:
+      summary: Delete game
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: deleted
+  /games/{id}/players:
+    post:
+      summary: Join player
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: player joined
+  /games/{id}/roll:
+    post:
+      summary: Roll dice
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                playerId:
+                  type: integer
+                roll:
+                  type: integer
+      responses:
+        '200':
+          description: new position
+  /players:
+    get:
+      summary: List players
+      responses:
+        '200':
+          description: ok
+    post:
+      summary: Create player
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gameId:
+                  type: integer
+      responses:
+        '201':
+          description: created
+  /players/{id}:
+    get:
+      summary: Get player
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: player data
+    put:
+      summary: Update player
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                position:
+                  type: integer
+      responses:
+        '200':
+          description: updated
+    delete:
+      summary: Delete player
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: deleted
+  /auth/signup:
+    post:
+      summary: Register user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      responses:
+        '201':
+          description: created
+  /auth/login:
+    post:
+      summary: User login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: jwt token
+  /users:
+    get:
+      summary: List users
+      responses:
+        '200':
+          description: ok
+    post:
+      summary: Create user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      responses:
+        '201':
+          description: created
+  /users/{id}:
+    get:
+      summary: Get user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: user info
+    put:
+      summary: Update user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      responses:
+        '200':
+          description: updated
+    delete:
+      summary: Delete user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: deleted

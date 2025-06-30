@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: garbanzos_back_s2-db-1
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: slgame  # ✅ Esto crea la base de datos al iniciar
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    container_name: garbanzos_back_s2-api-1
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: slgame
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
